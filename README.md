@@ -17,3 +17,5 @@ The MISRA Compliant Bare-metal GPIO driver can be accessed via the 'gpio_safe.h'
 **UART DRIVER**
 
 The MISRA Compliant Bare-metal GPIO driver can be accessed via the 'uart_safe.h' file located at 'Inc/uart_safe.h'. The UART port can be configured by calling the 'UART_Init()' function. Configure the port by using a variable of the structure type 'uart_config_t'. Use the other functions based on the functionality to be implemented. Refer to the comments for each of the function to get a clear understanding. 
+
+Note : The 'FPCLK' used to compute the baudrate is currently hardcoded in the firmware. This has to be varied based on the UART peripheral being used and the chip (Refer to its datasheet for more info).
