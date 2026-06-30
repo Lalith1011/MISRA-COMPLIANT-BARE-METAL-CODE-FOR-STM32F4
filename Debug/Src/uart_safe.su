@@ -1,0 +1,13 @@
+../Src/uart_safe.c:23:13:Is_PortValid	16	static
+../Src/uart_safe.c:34:13:Is_ParityValid	16	static
+../Src/uart_safe.c:44:13:Is_DataBitsLenValid	16	static
+../Src/uart_safe.c:54:13:Is_StopBitsLenValid	16	static
+../Src/uart_safe.c:64:13:EnableClock	16	static
+../Src/uart_safe.c:86:23:GetUARTPortAddr	24	static
+../Src/uart_safe.c:102:10:compute_uart_div	16	static
+../Src/uart_safe.c:107:6:set_baudrate_in_register	24	static
+../Src/uart_safe.c:113:15:UART_Init	32	static
+../Src/uart_safe.c:218:15:UART_TransmitByte	24	static
+../Src/uart_safe.c:270:15:UART_TransmitString	40	static
+../Src/uart_safe.c:336:15:UART_ReadByte	24	static
+../Src/uart_safe.c:373:15:UART_ReadLine	40	static

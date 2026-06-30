@@ -1,0 +1,6 @@
+"./Src/gpio_safe.o"
+"./Src/main.o"
+"./Src/syscalls.o"
+"./Src/sysmem.o"
+"./Src/uart_safe.o"
+"./Startup/startup_stm32f401retx.o"

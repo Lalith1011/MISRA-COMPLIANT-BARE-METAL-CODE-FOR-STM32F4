@@ -1,0 +1,16 @@
+../Src/gpio_safe.c:44:22:GPIO_GetPortRegister	24	static
+../Src/gpio_safe.c:84:13:GPIO_IsPortAndPinValid	16	static
+../Src/gpio_safe.c:127:13:GPIO_IsAlternateFunctionValid	16	static
+../Src/gpio_safe.c:146:13:GPIO_IsOutputTypeValid	16	static
+../Src/gpio_safe.c:163:13:GPIO_IsOutputSpeedValid	16	static
+../Src/gpio_safe.c:180:13:GPIO_IsStateValid	16	static
+../Src/gpio_safe.c:197:13:GPIO_IsPullUpOrDownValid	16	static
+../Src/gpio_safe.c:212:22:GPIO_EnableClock	24	static
+../Src/gpio_safe.c:244:13:GPIO_SetAlternateFunction	24	static
+../Src/gpio_safe.c:370:15:GPIO_Init	24	static
+../Src/gpio_safe.c:389:15:GPIO_PinInit	24	static
+../Src/gpio_safe.c:507:15:GPIO_PinWrite	24	static
+../Src/gpio_safe.c:546:15:GPIO_PinRead	24	static
+../Src/gpio_safe.c:589:15:GPIO_PinToggle	24	static
+../Src/gpio_safe.c:624:15:GPIO_DeInit	24	static
+../Src/gpio_safe.c:650:15:GPIO_Version	24	static
