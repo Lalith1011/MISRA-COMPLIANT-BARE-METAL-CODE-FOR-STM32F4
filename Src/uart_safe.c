@@ -419,17 +419,17 @@ Status_code_t UART_ReadLine(uart_config_t *config, char *line_to_read, uint8_t *
 		else
 		{
 			uint8_t received_data;
-			/* Check if any byte is yet to be read and clear the flag*/
-			if(((uart_port_addr->SR >> 0x05) & 0x01) == 0x01)
+			/* Check if any byte is yet to be read and keep reading the DR untill the flag is cleared */
+			while(((uart_port_addr->SR >> 5) & 0x01) == 0x01)
 			{
 				 received_data = uart_port_addr->DR;
 			}
 
-			/* Check if over_run took place and clear the flag */
-			if(((uart_port_addr->SR >> 0x03) & 0x01) == 0x01)
+			/* Check if over_run took place and keep running the loop till the flag is cleared */
+			while(((uart_port_addr->SR >> 3) & 0x01) == 0x01)
 			{
-				 received_data = uart_port_addr->DR;
 				 received_data = uart_port_addr->SR;
+				 received_data = uart_port_addr->DR;
 			}
 						break;
 		}
@@ -439,5 +439,27 @@ Status_code_t UART_ReadLine(uart_config_t *config, char *line_to_read, uint8_t *
 		return STATUS_OK;
 }
 
+Status_code_t UART_DeInit()
+{
+	/* Disable clocks to all the USART ports */
+		RCC->APB2ENR |= RCC_APB2ENR_USART1EN;
+		RCC->APB1ENR |= RCC_APB1ENR_USART2EN;
+		RCC->APB2ENR |= RCC_APB2ENR_USART6EN;
+}
+
+Status_code_t UART_Driver_Version(uint8_t *major, uint8_t *minor, uint8_t *patch)
+{
+	if((major == NULL) || (minor == NULL) || (patch == NULL))
+	{
+		return STATUS_NULL_ERROR;
+	}
+
+	*major = MAJOR_VERSION;
+	*minor = MINOR_VERSION;
+	*patch = PATCH_VERSION;
+
+	return STATUS_OK;
+
+}
 
 
