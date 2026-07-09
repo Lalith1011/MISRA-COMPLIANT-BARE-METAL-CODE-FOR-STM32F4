@@ -1,4 +1,4 @@
-This project features MISRA Compliant Bare-metal code for the STM32F401. It currently consists of the drivers for the GPIO and UART peripherals along with the newly integrated GCS built on top of the GPIO and UART drivers. Take a look at the points below to get an overview about the usage of the drivers. 
+This project features MISRA Compliant Bare-metal code for the STM32F401. It currently consists of the drivers for the GPIO and UART peripherals along with the newly integrated GCS (GPIO CONTROL SYSTEM) built on top of the GPIO and UART drivers. Take a look at the points below to get an overview about the usage of the drivers. 
 
 
 **STATUS CODES**
