@@ -19,3 +19,11 @@ The MISRA Compliant Bare-metal GPIO driver can be accessed via the 'gpio_safe.h'
 The MISRA Compliant Bare-metal GPIO driver can be accessed via the 'uart_safe.h' file located at 'Inc/uart_safe.h'. The UART port can be configured by calling the 'UART_Init()' function. Configure the port by using a variable of the structure type 'uart_config_t'. Use the other functions based on the functionality to be implemented. Refer to the comments for each of the function to get a clear understanding. 
 
 Note : The 'FPCLK' used to compute the baudrate is currently hardcoded in the firmware. This has to be varied based on the UART peripheral being used and the chip (Refer to its datasheet for more info).
+
+
+**GCS**
+
+Gpio Control System (GCS) is a system that can be used to configure the GPIO pins to set/read the output/input states of the GPIOs on the STM32F4 MCU via UART Serial Port. The below commands are to be used in sequence to setup the system and obtain a detailed overview of the additional system commands. 
+
+- 'Intialize System' : This command has to be called first to start the system.
+- '- H' : This command fetches a detailed overview of the system. It contains the list of commands the user can execute along with their responses. 
