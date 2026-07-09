@@ -10,6 +10,9 @@
 #include <status_codes.h>
 #include <stdint.h>
 #include <stdio.h>
+
+extern uint32_t input_register_value;
+
 /*
  * @brief enum to define GPIO port
  */

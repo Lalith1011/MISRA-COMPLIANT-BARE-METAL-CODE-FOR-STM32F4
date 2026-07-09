@@ -5,6 +5,7 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
+../Src/gpio_control_system.c \
 ../Src/gpio_safe.c \
 ../Src/main.c \
 ../Src/syscalls.c \
@@ -12,6 +13,7 @@ C_SRCS += \
 ../Src/uart_safe.c 
 
 OBJS += \
+./Src/gpio_control_system.o \
 ./Src/gpio_safe.o \
 ./Src/main.o \
 ./Src/syscalls.o \
@@ -19,6 +21,7 @@ OBJS += \
 ./Src/uart_safe.o 
 
 C_DEPS += \
+./Src/gpio_control_system.d \
 ./Src/gpio_safe.d \
 ./Src/main.d \
 ./Src/syscalls.d \
@@ -33,7 +36,7 @@ Src/%.o Src/%.su Src/%.cyclo: ../Src/%.c Src/subdir.mk
 clean: clean-Src
 
 clean-Src:
-	-$(RM) ./Src/gpio_safe.cyclo ./Src/gpio_safe.d ./Src/gpio_safe.o ./Src/gpio_safe.su ./Src/main.cyclo ./Src/main.d ./Src/main.o ./Src/main.su ./Src/syscalls.cyclo ./Src/syscalls.d ./Src/syscalls.o ./Src/syscalls.su ./Src/sysmem.cyclo ./Src/sysmem.d ./Src/sysmem.o ./Src/sysmem.su ./Src/uart_safe.cyclo ./Src/uart_safe.d ./Src/uart_safe.o ./Src/uart_safe.su
+	-$(RM) ./Src/gpio_control_system.cyclo ./Src/gpio_control_system.d ./Src/gpio_control_system.o ./Src/gpio_control_system.su ./Src/gpio_safe.cyclo ./Src/gpio_safe.d ./Src/gpio_safe.o ./Src/gpio_safe.su ./Src/main.cyclo ./Src/main.d ./Src/main.o ./Src/main.su ./Src/syscalls.cyclo ./Src/syscalls.d ./Src/syscalls.o ./Src/syscalls.su ./Src/sysmem.cyclo ./Src/sysmem.d ./Src/sysmem.o ./Src/sysmem.su ./Src/uart_safe.cyclo ./Src/uart_safe.d ./Src/uart_safe.o ./Src/uart_safe.su
 
 .PHONY: clean-Src
 

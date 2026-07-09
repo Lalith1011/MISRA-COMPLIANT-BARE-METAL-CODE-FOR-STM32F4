@@ -1,0 +1,8 @@
+../Src/gpio_control_system.c:25:20:compute_gpio_port	6
+../Src/gpio_control_system.c:42:19:compute_gpio_pin	16
+../Src/gpio_control_system.c:77:21:compute_gpio_mode	3
+../Src/gpio_control_system.c:88:28:compute_gpio_pull_up_or_down	3
+../Src/gpio_control_system.c:98:25:compute_output_state	3
+../Src/gpio_control_system.c:109:22:GCS_Init	1
+../Src/gpio_control_system.c:115:22:GCS_Helper	3
+../Src/gpio_control_system.c:156:22:GCS_CommandParser	11

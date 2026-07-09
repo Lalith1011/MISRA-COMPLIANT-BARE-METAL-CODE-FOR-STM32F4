@@ -7,7 +7,9 @@
 ../Src/uart_safe.c:102:10:compute_uart_div	16	static
 ../Src/uart_safe.c:107:6:set_baudrate_in_register	24	static
 ../Src/uart_safe.c:113:15:UART_Init	32	static
-../Src/uart_safe.c:218:15:UART_TransmitByte	24	static
-../Src/uart_safe.c:270:15:UART_TransmitString	40	static
-../Src/uart_safe.c:336:15:UART_ReadByte	24	static
-../Src/uart_safe.c:373:15:UART_ReadLine	40	static
+../Src/uart_safe.c:219:15:UART_TransmitByte	24	static
+../Src/uart_safe.c:273:15:UART_TransmitString	40	static
+../Src/uart_safe.c:343:15:UART_ReadByte	24	static
+../Src/uart_safe.c:380:15:UART_ReadLine	40	static
+../Src/uart_safe.c:449:15:UART_DeInit	4	static
+../Src/uart_safe.c:457:15:UART_Driver_Version	24	static

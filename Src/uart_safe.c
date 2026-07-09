@@ -160,6 +160,7 @@ Status_code_t UART_Init(uart_config_t *config)
 //   uart_port_addr->BRR |= (fraction & 0x0F);
 //   uart_port_addr->BRR |= (mantissa & 0xFFF0);
 
+
    /* Set parity control bit and data_len bit */
    if(config->data_bits == DATA_BITS_9)
    {
@@ -234,18 +235,18 @@ Status_code_t UART_TransmitByte(uart_config_t *config, uint8_t byte_to_transmit)
 
 	USART_TypeDef *uart_port_addr = GetUARTPortAddr(config->port);
 
-	/* Check if line is busy */
+	/* Check if line is free*/
 	if(((uart_port_addr->SR >> 0x06) & 0x01) == 0x00)
 	{
 		return STATUS_BUSY_ERROR;
 	}
 
 	/* Place the data in the DR */
-    uart_port_addr->DR |= (byte_to_transmit & 0xFF);
+    uart_port_addr->DR = (byte_to_transmit & 0xFF);
 
     uint32_t i = 0;
 
-    /* Wait for transmission to complete */
+    /* Wait for transmission to get completed */
     while(((uart_port_addr->SR >> 0x06) & 0x01) == 0x00)
     {
     	i += 1;
@@ -255,6 +256,8 @@ Status_code_t UART_TransmitByte(uart_config_t *config, uint8_t byte_to_transmit)
     		break;
     	}
     }
+    uart_port_addr->SR &= ~(0x01UL << 0x06); /* Clear the TC flag */
+
 
     if(i >= UART_TRANSMIT_TIMEOUT_IN_TICKS)
     {
@@ -267,7 +270,7 @@ Status_code_t UART_TransmitByte(uart_config_t *config, uint8_t byte_to_transmit)
 
 }
 
-Status_code_t UART_TransmitString(uart_config_t *config, char *data, uint8_t data_len)
+Status_code_t UART_TransmitString(uart_config_t *config, char *data, uint16_t data_len)
 {
 	uint32_t tick_count = 0;
 
@@ -305,9 +308,11 @@ Status_code_t UART_TransmitString(uart_config_t *config, char *data, uint8_t dat
 	for(int i = 0; i < data_len; i ++)
 	{
 	/* Place the data in the DR */
-    uart_port_addr->DR |= (((uint8_t)*(data + i)) & 0xFF);
+    uart_port_addr->DR = (((uint8_t)*(data + i)) & 0xFF);
 
     tick_count = 0;
+
+    uart_port_addr->SR &= ~(0x01UL << 0x06); /* Clear the TC flag */
 
     /* Wait for transmission to complete */
     while(((uart_port_addr->SR >> 0x06) & 0x01) == 0x00)
@@ -319,6 +324,8 @@ Status_code_t UART_TransmitString(uart_config_t *config, char *data, uint8_t dat
     		break;
     	}
     }
+
+
 
 
 	}
@@ -370,7 +377,7 @@ Status_code_t UART_ReadByte(uart_config_t *config, char *byte_to_read)
 		return STATUS_OK;
 }
 
-Status_code_t UART_ReadLine(uart_config_t *config, char *line_to_read, uint8_t *data_len)
+Status_code_t UART_ReadLine(uart_config_t *config, char *line_to_read, uint16_t *data_len)
 {
 	  /* Check if uart is initialized */
 	   if(is_uart_initialized == 0U)

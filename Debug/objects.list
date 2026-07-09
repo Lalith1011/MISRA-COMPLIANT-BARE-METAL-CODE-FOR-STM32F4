@@ -1,3 +1,4 @@
+"./Src/gpio_control_system.o"
 "./Src/gpio_safe.o"
 "./Src/main.o"
 "./Src/syscalls.o"

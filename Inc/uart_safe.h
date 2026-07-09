@@ -84,7 +84,7 @@ Status_code_t UART_TransmitByte(uart_config_t *config, uint8_t byte_to_transmit)
  * @retval STATUS_PARAM_ERROR : If invalid parameter is passed.
  * @retval STATUS_TIMEOUT_ERROR : If a timeout occurs.
  */
-Status_code_t UART_TransmitString(uart_config_t *config, char *data, uint8_t data_len);
+Status_code_t UART_TransmitString(uart_config_t *config, char *data, uint16_t data_len);
 
 /*
  * @brief This function is used to read a byte from the configured UART port.
@@ -109,7 +109,7 @@ Status_code_t UART_ReadByte(uart_config_t *config, char *byte_to_read);
  * @retval STATUS_TIMEOUT_ERROR : If a timeout occurs.
  *
  */
-Status_code_t UART_ReadLine(uart_config_t *config, char *line_to_read, uint8_t *data_len);
+Status_code_t UART_ReadLine(uart_config_t *config, char *line_to_read, uint16_t *data_len);
 
 
 /*

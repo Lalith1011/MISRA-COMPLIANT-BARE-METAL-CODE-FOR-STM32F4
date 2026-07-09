@@ -1,0 +1,8 @@
+../Src/gpio_control_system.c:25:20:compute_gpio_port	16	static
+../Src/gpio_control_system.c:42:19:compute_gpio_pin	16	static
+../Src/gpio_control_system.c:77:21:compute_gpio_mode	16	static
+../Src/gpio_control_system.c:88:28:compute_gpio_pull_up_or_down	16	static
+../Src/gpio_control_system.c:98:25:compute_output_state	16	static
+../Src/gpio_control_system.c:109:22:GCS_Init	4	static
+../Src/gpio_control_system.c:115:22:GCS_Helper	128	static
+../Src/gpio_control_system.c:156:22:GCS_CommandParser	40	static
